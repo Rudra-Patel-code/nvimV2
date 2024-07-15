@@ -21,6 +21,15 @@ return {
     comment.setup({
       -- for commenting tsx, jsx, svelte, html files
       pre_hook = ts_context_commentstring.create_pre_hook(),
+      padding = true,
+      ---Whether the cursor should stay at its position
+      sticky = true,
+      mappings = {
+        ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+        basic = true,
+        ---Extra mapping; `gco`, `gcO`, `gcA`
+        extra = true,
+      },
     })
   end,
 }
